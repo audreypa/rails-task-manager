@@ -1,11 +1,13 @@
 <h1>My Tasks</h1>
 
+<div class="div_link"><%= link_to "+", new_task_path, class:'link' %></div>
+
 <ul>
   <div class="container">
     <% @tasks.each do |task| %>
       <div class="task_container">
         <h2><%= link_to task.title, task_path(task), class:'task'%></h2>
-        <p><%= task.details %></p>
+        <div id="div_detail"><p><%= task.details %></p></div>
         <div class= "checkbox_container">
           <%= check_box_tag task.completed, class:'checkbox' %>
         </div>
@@ -13,4 +15,3 @@
     <% end %>
   </div>
 </ul>
-<%= link_to "Add a new task", new_task_path %>

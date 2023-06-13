@@ -1,7 +1,11 @@
-<h2><%= @task.title %></h2>
-<p><%= @task.details %></p>
-<p><%= @task.completed %></p>
+<div class="task_container">
+  <h2><%= @task.title %></h2>
+  <p><%= @task.details %></p>
+  <%= check_box_tag @task.completed, class:'checkbox' %>
+</div>
 
-<%= link_to "Edit", edit_task_path %>
-<%= link_to "Back to list", tasks_path %>
-<%= link_to "Delete", task_path(@task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+
+<div class="button_container"><p><%= link_to "Edit", edit_task_path, class:'link'%></p>
+<p><%= link_to "Back to list", tasks_path, class:'link'%></p>
+<p><%= link_to "Delete", task_path(@task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:'link'%></p>
+</div>
